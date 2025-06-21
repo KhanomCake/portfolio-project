@@ -1,0 +1,90 @@
+@import url('https://fonts.googgleapins.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+body
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(233, 210, 213);
+}
+.container
+{
+    position: relative;
+    width: 400px;
+}
+h2
+{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.container form
+{
+    position: relative;
+    width: 100%;
+}
+.container form .inputBox
+{
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+.container form .inputBox input
+{
+    position: relative;
+    width: 100%;
+    border: 2px solid #fff;
+    background: #fff;
+    padding: 20px 10px;
+    padding-left: 40px;
+    border-radius: 8px;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    outline: none;
+    margin-bottom: 10px;
+}
+.container form .inputBox .text
+{
+    position: absolute;
+    top: 0;
+    padding: 22px 0;
+    color: rgba(97, 90, 90, 0.692);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 60px;
+    font-size: 1em;
+    transition: 0.25s;
+}
+.forget
+{
+    position: relative;
+    top: -15px;
+    color: rgba(97, 90, 90, 0.692);
+    letter-spacing: 1px;
+}
+.forget a
+{
+    color: #fff;
+}
+.container form .inputBox input[type="submit"]
+{
+    padding: 10px 20px;
+    background: #c78d8d;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
