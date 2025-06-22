@@ -31,13 +31,18 @@ nav ul{
     margin-top: 10px;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
-nav li{
+nav li {
     height: 50px;
 }
+
+nav li.active {
+    background-color: #FFC5D3;
+}
+
 nav a{
     height: 100%;
     padding: 0 20px;

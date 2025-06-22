@@ -7,6 +7,7 @@
     <title>CSS Showcase</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav>
         <ul>
@@ -26,7 +27,7 @@
     </nav>
     <div class="container">
         <iframe id="project"></iframe>
-    </div> 
+    </div>
     <script>
         const links = document.querySelectorAll('nav ul li a');
         const iframe = document.getElementById('project');
@@ -34,9 +35,17 @@
         links.forEach(link => {
             link.addEventListener('click', function (event) {
                 event.preventDefault();
+
+                const activeLink = document.querySelector('nav ul li.active');
+                if (activeLink) {
+                    activeLink.classList.remove('active');
+                }
+
+                event.currentTarget.parentElement.classList.add('active');
                 iframe.src = this.getAttribute('href');
             });
         });
     </script>
 </body>
+
 </html>
