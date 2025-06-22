@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe#project {
+            width: 70%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="calculator-code/index.html">Calculator</a></li>
+            <li><a href="portfolio-1/AnimatedBackground.html">Animated Background</a></li>
+            <li><a href="portfolio-2/index.html">Hover Neon Button</a></li>
+            <li><a href="portfolio-3/index.html">Trilogy Loading</a></li>
+            <li><a href="portfolio-4/index.html">Infinity Loading</a></li>
+            <li><a href="portfolio-5/index.html">Click to see miracle</a></li>
+            <li><a href="portfolio-6/index.html">Login (Styling not complete)</a></li>
+            <li><a href="portfolio-7/index.html">Card</a></li>
+            <li><a href="portfolio-8/index.html">Login Form (Fonts is barely visible)</a></li>
+            <li><a href="portfolio-9/index.html">Social Media Button</a></li>
+            <li><a href="portfolio-10/index.html">Loading</a></li>
+            <li><a href="portfolio-11/index.html">Nothing Here</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <iframe id="project"></iframe>
+    </div> 
+    <script>
+        const links = document.querySelectorAll('nav ul li a');
+        const iframe = document.getElementById('project');
+
+        links.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                iframe.src = this.getAttribute('href');
+            });
+        });
+    </script>
+</body>
+
+</html>
