@@ -3,6 +3,7 @@ const displayTop = document.getElementById("display-top");
 
 let currentValue = ""; // เก็บตัวเลขที่กำลังกด
 let total = NaN;         // เก็บผลรวมที่บวกไปแล้ว
+let lastOperator = null;
 
 function clickOnNumber(num) {
   if (num === "0" && currentValue === "") return;
@@ -28,7 +29,43 @@ function clickPlus() {
     total += number;
   }
 
+  lastOperator = "+";
   displayTop.innerText = total + " +";
+  displayBox.innerText = total;
+  currentValue = "";
+}
+
+function clickMultiply() {
+  if (currentValue === "") return;
+
+  let number = parseFloat(currentValue);
+  if (total === 0 && displayTop.innerText === "") {
+  total = number;
+} else {
+  total *= number;
+}
+
+  lastOperator = "*"; 
+  displayTop.innerText = total + " ×";
+  displayBox.innerText = total;
+  currentValue = "";
+}
+
+function clickDivide() {
+  if (currentValue === "") return;
+
+  let number = parseFloat(currentValue);
+  if (isNaN(number)) return; // ✅ ถ้าไม่ใช่ตัวเลข ให้หยุดเลย
+
+  // ตั้งค่าเริ่มต้นให้ total ถ้ายังไม่มีการคำนวณมาก่อน
+  if (total === 0 && displayTop.innerText === "") {
+    total = number;
+  } else {
+    total /= number;
+  }
+
+  lastOperator = "/";
+  displayTop.innerText = total + " ÷";
   displayBox.innerText = total;
   currentValue = "";
 }
@@ -51,9 +88,30 @@ function clickMinus() {
     total -= number;
   }
 
+  lastOperator ="-";
   displayTop.innerText = total + " -";
   displayBox.innerText = total;
-
   currentValue = "";
 }
 
+function calculateResult() {
+  if (currentValue === "") return;
+
+  let number = parseFloat(currentValue);
+  if (isNaN(number) || isNaN(total)) return;
+
+  if (lastOperator === "+") {
+    total += number;
+  } else if (lastOperator === "-") {
+    total -= number;
+  } else if (lastOperator === "*") {
+    total *= number;
+  } else if (lastOperator === "/") {
+    total /= number;
+  }
+
+  displayTop.innerText = "";
+  displayBox.innerText = total;
+  currentValue = total.toString();
+  lastOperator = null;
+}
