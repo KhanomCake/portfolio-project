@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Paytone+One&display=swap');
+
+* {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: #0b0423;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
+#left, #right {
+    width: 300px;
+    min-height: 400px;
+    margin: 20px;
+    border: 2px dashed #fff;
+}
+
+.list {
+    font-weight: bold;
+    background: #e91e63;
+    height: 60px;
+    margin: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+}
+
+.list::before {
+    content: '⠿';
+    width: 20px;
+    height: 20px;    
+    margin-right: 10px;
+    margin-left: 10px;
+}
