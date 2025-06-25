@@ -23,8 +23,7 @@ body {
     font-size: 7vw;
     position: relative;
     width: 50vw;
-    height: 50vw;
-    /* border: 15px solid #d5b2d2; */
+    height: 50vw;    
     border-radius: 50%;
     display: flex;
     justify-content: center;
