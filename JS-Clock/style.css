@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #282c34;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#clock {
+    font-weight: 900;
+    font-size: 7vw;
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    /* border: 15px solid #d5b2d2; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circle1 {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    border: 1vw solid #d38595;
+    animation: rotate1 60s linear infinite;
+}
+
+#circle1::before {
+    content: '';
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    top: -1.4vw;
+    right: 49%;
+    background: #282c34;    
+}
+
+#circle2 {
+    position: absolute;
+    width: 45vw;
+    height: 45vw;
+    border-radius: 50%;
+    border: 1vw solid #c55b83;
+    animation: rotate1 60s linear infinite;
+}
+
+#circle2::before {
+    content: '';
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    top: -1.4vw;
+    right: 49%;
+    background: #282c34;
+}
+
+#circle3 {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    border: 1vw solid #d5b2d2;
+    animation: rotate1 60s linear infinite;
+}
+
+#circle3::before {
+    content: '';
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    top: -1.4vw;
+    right: 49%;
+    background: #282c34;
+}
