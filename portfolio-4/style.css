@@ -48,7 +48,7 @@ section
 {
     content: '';
     position: absolute;
-    top: calc(50% - 7-7.5px);
+    top: calc(50% - 7.5px);
     right: 0;
     width: 15px;
     height: 15px;
