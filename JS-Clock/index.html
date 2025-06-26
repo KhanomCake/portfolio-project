@@ -9,6 +9,11 @@
 </head>
 
 <body>
+    <div class="toggle-area">
+        <input type="checkbox" id="toggle">
+        <label for="toggle" class="slider round"></label>
+        <span class="toggle-text">Toggle Dark Mode</span>
+    </div>
     <div id="clock">Loading...</div>    
     <div id="circle1"></div>    
     <div id="circle2"></div>    
@@ -17,12 +22,29 @@
         const circle1 = document.getElementById('circle1');
         const circle2 = document.getElementById('circle2');
         const circle3 = document.getElementById('circle3');
+        const toggle = document.getElementById('toggle');
+        let userPreference = false;
+
+        toggle.addEventListener('change', function() {
+            userPreference = true;
+            document.body.classList.toggle('dark-mode');
+        });
 
         function updateClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            if (userPreference === false) {
+                if (hours >= 18 || hours < 6 ) {
+                    toggle.checked = true;
+                    document.body.classList.add('dark-mode');
+                } else {
+                    toggle.checked = false;
+                    document.body.classList.remove('dark-mode');
+                }
+            }
 
             // Update circles based on time
             circle1.style.rotate = `${(now.getHours() % 12) * 30}deg`;
