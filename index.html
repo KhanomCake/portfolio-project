@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div class="menu-toggle">☰</div>
     <nav>
         <ul>
             <li><a href="JS-Clock/">JS Clock</a></li>
@@ -44,6 +45,13 @@
                 event.currentTarget.parentElement.classList.add('active');
                 iframe.src = this.getAttribute('href');
             });
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click',() => {
+            navMenu.classList.toggle('show');
         });
     </script>
 </body>
