@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --toggle-color: #fff;
+    --toggle-bg-color: #282c34;
+    --clock-text-color: #785f5f;
+    --background-color: #fff;
+}
+
+body.dark-mode {
+    --toggle-color: #282c34;
+    --toggle-bg-color: #fff;
+    --clock-text-color: #fff;
+    --background-color: #282c34;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#clock {
+    color: var(--clock-text-color);
+    font-weight: 900;
+    font-size: 7vw;
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circle1 {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    border: 1vw solid #d38595;
+    animation: rotate1 60s linear infinite;
+}
+
+#circle1::before {
+    content: '';
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    top: -1.4vw;
+    right: 49%;
+    background: var(--background-color);
+}
+
+#circle2 {
+    position: absolute;
+    width: 45vw;
+    height: 45vw;
+    border-radius: 50%;
+    border: 1vw solid #c55b83;
+    animation: rotate1 60s linear infinite;
+}
+
+#circle2::before {
+    content: '';
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    top: -1.4vw;
+    right: 49%;
+    background: var(--background-color);
+}
+
+#circle3 {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    border: 1vw solid #d5b2d2;
+    animation: rotate1 60s linear infinite;
+}
+
+#circle3::before {
+    content: '';
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    top: -1.4vw;
+    right: 49%;
+    background: var(--background-color);
+}
+
+.toggle-area {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-area span {
+    color: var(--clock-text-color);
+    margin-left: 5px;
+}
+
+.slider.round {
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: var(--toggle-bg-color);
+    cursor: pointer;
+    position: relative;
+}
+
+.slider.round::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 5px;
+    transition: 0.2s;
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked + .slider.round {
+    background-color: var(--toggle-bg-color);
+}
+
+#toggle:checked + .slider.round::before {
+    transform: translateX(25px);
+    background-color: var(--toggle-color);
+}
