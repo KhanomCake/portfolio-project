@@ -52,3 +52,48 @@ nav a{
     color: black;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #999;
+}
+
+@media (max-width: 600px){
+    .menu-toggle {
+        display: block;
+    }
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 20px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    border-top: 1px solid #ccc;
+}
+
+nav ul.show {
+    display: flex;
+}
+
+nav li {
+    margin: 10px 0;
+    text-align: left;
+}
+
+iframe#project {
+    width: 100%;
+ }
+}
